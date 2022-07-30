@@ -1,22 +1,22 @@
-const User = require("../models/user");
+const Author = require("../models/author");
 
 const login = (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
 
     const userInputData = req.body;
 
-    User.findOne(userInputData)
-        .then((user) => {
-            if (user === null) {
+    Author.findOne(userInputData)
+        .then((author) => {
+            if (author === null) {
                 const data = {
-                    message: "Sorry user is not here!",
+                    message: "Sorry author is not here!",
                 }
 
                 res.status(401);
                 res.send(data);
             } else {
                 const data = {
-                    user,
+                    author,
                 }
 
                 res.status(200);
@@ -34,11 +34,11 @@ const register = (req, res) => {
 
     const userInputData = req.body;
 
-    const user = new User(userInputData);
-    user.save()
-        .then((user) => {
+    const author = new Author(userInputData);
+    author.save()
+        .then((author) => {
             const data = {
-                user,
+                author,
             }
 
             res.status(200);
