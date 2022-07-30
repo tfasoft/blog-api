@@ -5,10 +5,6 @@ const all = (req, res) => {
 
     Blog.find()
         .then((blogs) => {
-            const data = {
-                blogs,
-            }
-
             res.status(200);
             res.send(blogs);
         })
