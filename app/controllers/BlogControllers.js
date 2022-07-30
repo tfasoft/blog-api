@@ -59,8 +59,29 @@ const get = (req, res) => {
         });
 }
 
+const del = (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+
+    const blog_id = req.params.blog_id;
+
+    Blog.findByIdAndDelete(blog_id)
+        .then((blog) => {
+            const data = {
+                message: "Deleted",
+            }
+
+            res.status(200);
+            res.send(data);
+        })
+        .catch((error) => {
+            res.status(500);
+            res.send(error);
+        });
+}
+
 module.exports = {
     all,
     add,
     get,
+    del,
 }
