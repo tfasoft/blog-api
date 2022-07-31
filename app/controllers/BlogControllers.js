@@ -40,7 +40,7 @@ const get = (req, res) => {
 
     const blog_id = req.params.blog_id;
 
-    Blog.findById(blog_id)
+    Blog.findByIdAndUpdate(blog_id, { $inc: { "views" : 1 }})
         .then((blog) => {
             const data = {
                 blog,
