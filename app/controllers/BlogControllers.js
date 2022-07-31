@@ -3,7 +3,7 @@ const Blog = require("../models/blog");
 const all = (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
 
-    Blog.find()
+    Blog.find().sort({ createdAt: -1})
         .then((blogs) => {
             res.status(200);
             res.send(blogs);
