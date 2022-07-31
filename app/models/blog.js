@@ -18,7 +18,11 @@ const blogModel = new Schema({
     author: {
         type: String,
         required: true,
-    }
+    },
+    views: {
+        type: Number,
+        required: true,
+    },
 }, {
     timestamps: true,
 });
