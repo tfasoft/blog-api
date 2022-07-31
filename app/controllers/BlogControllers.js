@@ -75,9 +75,31 @@ const del = (req, res) => {
         });
 }
 
+const update = (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+
+    const blog_id = req.body.id;
+    const newBlog = req.body.new;
+
+    Blog.findByIdAndUpdate(blog_id, newBlog)
+        .then((blog) => {
+            const data = {
+                message: "Updated",
+            }
+
+            res.status(200);
+            res.send(data);
+        })
+        .catch((error) => {
+            res.status(500);
+            res.send(error);
+        });
+}
+
 module.exports = {
     all,
     add,
     get,
     del,
+    update,
 }
