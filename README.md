@@ -1,4 +1,8 @@
-# Telegram Factor Authentication Blog - Back-End
+# TFA Blog - Back-End
+
+> This repository is archived. We moved blog API to our main API service.
+
+---
 
 **TFA Blog** is a **MERN** application. This is the Back-End part of it.
 
