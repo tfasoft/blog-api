@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/tfasoft/blog-backend#readme",
   "_moduleAliases": {
-    "@": "./app"
+    "$app": "./app"
   },
   "dependencies": {
     "cors": "^2.8.5",
