@@ -1,8 +1,8 @@
 {
-  "name": "tfa-blog-backend",
-  "version": "1.0.0",
-  "description": "Telegram factor authentication dashboard backend.",
-  "main": "app.js",
+  "name": "tfasoft-backend",
+  "version": "2.0.0",
+  "description": "Telegram factor authentication blog backend.",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "link-module-alias && nodemon server.js",
