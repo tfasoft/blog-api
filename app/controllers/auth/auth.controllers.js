@@ -15,7 +15,7 @@ export const LOGIN = async (req, res) => {
       });
     }
 
-    res.status(200).send({ token: createToken(user._id) });
+    res.status(200).send({ token: createToken(user._id), user });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
