@@ -26,7 +26,18 @@ export const SINGLE = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const blog = await Blog.findById(id).populate("author");
+    const blog = await Blog.findByIdAndUpdate(
+      id,
+      {
+        $inc: {
+          views: 1,
+        },
+      },
+      {
+        new: true,
+        runValidators: true,
+      }
+    ).populate("author");
 
     if (blog === null) {
       res.status(404).send({ messahe: "Blog not found" });

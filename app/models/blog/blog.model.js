@@ -24,6 +24,7 @@ const schema = Schema(
     },
     views: {
       type: Number,
+      default: 0,
       required: false,
     },
   },
