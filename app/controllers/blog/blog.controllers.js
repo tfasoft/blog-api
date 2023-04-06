@@ -14,9 +14,9 @@ export const CREATE = async (req, res) => {
   const data = req.body;
 
   try {
-    await Blog.create(data);
+    const blog = await Blog.create(data);
 
-    res.status(200).send({ message: "Blog created" });
+    res.status(200).send({ message: "Blog created", id: blog._id });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -40,7 +40,7 @@ export const SINGLE = async (req, res) => {
     ).populate("author");
 
     if (blog === null) {
-      res.status(404).send({ messahe: "Blog not found" });
+      return res.status(404).send({ messahe: "Blog not found" });
     }
 
     res.status(200).send(blog);
