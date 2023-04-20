@@ -1,13 +1,7 @@
-# TFA Blog - Back-End
+# TFASoft Blog | API
 
-> This repository is archived. We moved blog API to our main API service.
-
----
-
-**TFA Blog** is a **MERN** application. This is the Back-End part of it.
-
-> We create the Back-End with **MVC** architecture.
+**TFA Status** is a **MERN** application. This is the Back-End part of it.
 
 ## Front-End
 
-Front-End is available [here](https://github.com/tfasoft/blog-frontend).
+Front-End is available [here](https://github.com/tfasoft/blog-ui).
